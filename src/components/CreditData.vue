@@ -1,7 +1,7 @@
 <template>
   <div class="credits">
-    <span>@ Hola</span>
-    <h4>Prueba</h4>
+    <span>{{ credits.creditName }}</span>
+    <h4>{{ credits.creditType }}</h4>
   </div>
 </template>
 
