@@ -1,18 +1,37 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CreditData /> <!-- v-for="credit in credits" :key="credit" :credit="credit" -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import CreditData from '@/components/CreditData.vue'
+import axios from 'axios'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    CreditData
+  },
+  data(){
+    return{
+      credits: null
+    }
+  },
+  created(){
+    axios
+      .get('https://my-json-server.typicode.com/queturotre/carmedi/data')
+      .then(response => {
+        this.credits = response.data
+        // console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }
 </script>
+
+<style scoped>
+
+</style>
