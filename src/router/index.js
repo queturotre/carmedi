@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CreditHome from '../views/CreditHome.vue'
 import BankNotes from '../views/BankNotes.vue'
+import CreditDetail from '../views/CreditDetail'
 
 const routes = [
   {
@@ -17,6 +18,12 @@ const routes = [
     path: "/time",
     name: "time",
     component: () => import("../views/TimeConversion.vue")
+  },
+  {
+    path: '/credits/:id',
+    name: 'CreditDetail',
+    props: true,
+    component: CreditDetail
   }
 ]
 

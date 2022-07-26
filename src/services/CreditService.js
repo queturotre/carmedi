@@ -13,5 +13,8 @@ export default {
   getCredits(){
     return apiClient.get('/credits')
   },
+  getCredit(id) {
+    return apiClient.get('/credits/' + id)
+  }
 }
 

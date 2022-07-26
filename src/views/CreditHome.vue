@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <CreditData v-for="credit in credits" :key="credit.id" :credit="credit"/> <!-- :credit="credit" -->
+    <CreditData v-for="credit in credits" :key="credit.id" :credit="credit" /> 
   </div>
 </template>
 
