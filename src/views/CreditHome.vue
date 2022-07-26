@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <button @click="mostrar">This is the button</button>
-    <CreditData v-for="credit in credits" :key="credit" :credit="credit"/> <!--  -->
+    <CreditData v-for="credit in credits" :key="credit.id" :credit="credit"/> <!-- :credit="credit" -->
   </div>
 </template>
 
@@ -16,7 +15,7 @@ export default {
   },
   data(){
     return{
-      credits: []
+      credits: null
     }
   },
   created(){
@@ -39,6 +38,8 @@ export default {
 
 <style scoped>
 .home{
-  border: solid 1px salmon;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 </style>

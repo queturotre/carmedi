@@ -1,13 +1,19 @@
 <template>
   <div class="credits">
-    <span>{{ credits.creditName }}</span>
-    <h4>{{ credits.creditType }}</h4>
+    <span>{{ credit.creditName }}</span>
+    <h4>{{ credit.creditType }}</h4>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CreditData'
+  name: 'CreditData',
+  props:{
+    credit: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 
