@@ -1,21 +1,22 @@
 <template>
   <div class="home">
-    <CreditData v-for="credit in credits" :key="credit"/> <!--  -->
+    <button @click="mostrar">This is the button</button>
+    <CreditData v-for="credit in credits" :key="credit" :credit="credit"/> <!--  -->
   </div>
 </template>
 
 <script>
 import CreditData from '@/components/CreditData.vue'
-import CreditService from '@/services/CreditService'
+import CreditService from '@/services/CreditService.js'
 
 export default {
-  name: 'HomeView',
+  name: 'CreditHome',
   components: {
     CreditData
   },
   data(){
     return{
-      credits: null
+      credits: []
     }
   },
   created(){
@@ -27,10 +28,17 @@ export default {
       .catch(error => {
         console.log(error)
       })
+  },
+  methods:{
+    mostrar(){
+      console.log(this.credits)
+    }
   }
 }
 </script>
 
 <style scoped>
-
+.home{
+  border: solid 1px salmon;
+}
 </style>

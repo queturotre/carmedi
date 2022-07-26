@@ -10,8 +10,8 @@ const apiClient = axios.create({
 })
 
 export default {
-  getCredits() {
-    return apiClient.get('/data')
+  getCredits(){
+    return apiClient.get('/credits')
   },
 }
 
